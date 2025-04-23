@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:play_navigation/presentation/homepage.dart';
+import 'package:play_navigation/presentation/loginpage.dart';
+import 'package:play_navigation/presentation/orderpage.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +16,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      ),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => const LoginPage(),
+        '/home': (context) => const Homepage(),
+        '/order': (context) => const OrderPage(),
+      },
 
     );
   }
